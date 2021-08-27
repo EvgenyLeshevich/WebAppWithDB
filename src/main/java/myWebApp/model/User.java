@@ -8,6 +8,8 @@ public class User implements Serializable {
     private int id;
     private String login;
     private String password;
+    private String firstName;
+    private String lastName;
 
     public User() {
     }
@@ -15,6 +17,13 @@ public class User implements Serializable {
     public User(String login, String password) {
         this.login = login;
         this.password = password;
+    }
+
+    public User(String login, String password, String name, String lastName) {
+        this.login = login;
+        this.password = password;
+        this.firstName = name;
+        this.lastName = lastName;
     }
 
     public User(int id, String login, String password) {
@@ -45,5 +54,21 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }

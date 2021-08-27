@@ -19,10 +19,11 @@ public class UserServlet extends HttpServlet {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
             try (Connection conn = DriverManager.getConnection(
-                    "jdbc:mysql://127.0.0.1:3306/user", "root", "06919991aH")){
+                    "jdbc:mysql://127.0.0.1:3306/userdb", "root", "06919991aH")){
                 pw.println("Connection to UserDB successfully!");
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
+                pw.println("Connection failed...");
             }
         } catch (Exception e) {
             pw.println("Connection failed...");
